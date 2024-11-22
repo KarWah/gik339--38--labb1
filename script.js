@@ -2,14 +2,15 @@
 const colorInput = document.getElementById('color');
 const contentInput = document.getElementById('content');
 const styleCheckbox = document.getElementById('divStyle');
-const applyButton = document.getElementById('applyButton');
+const removeButton = document.getElementById('removeButton');
 const outputDiv = document.getElementById('outputDiv');
 
 
 // Lägg till en anonym funktion som eventlyssnare för knappen
-applyButton.addEventListener('click', () => {
+removeButton.addEventListener('click', () => {
     // Ta bort div-elementet från DOM
     outputDiv.remove(); // Enkel och effektiv metod för att ta bort elementet
+    console.log('Event triggered by:', event.target);
 });
 
 // Lägg till en anonym funktion som eventlyssnare på checkboxen
@@ -22,7 +23,6 @@ styleCheckbox.addEventListener('change', () => {
     // Uppdatera divens innehåll och stil
     outputDiv.textContent = contentValue || 'Inget innehåll angett'; // Standardtext om fältet är tomt
     outputDiv.style.backgroundColor = colorValue || 'transparent'; // Transparent om ingen färg anges
-    console.log('Event triggered by:', event.target);
     // Om checkboxen är markerad, lägg till extra stil
     if (isStyled) {
         outputDiv.style.border = '2px solid black';
@@ -34,5 +34,6 @@ styleCheckbox.addEventListener('change', () => {
         outputDiv.style.padding = '0';
         outputDiv.style.fontWeight = 'normal';
     }
+    console.log('Event triggered by:', event.target);
 });
 

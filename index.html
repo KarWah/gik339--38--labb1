@@ -3,9 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>gik399 - Grupp 38</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(83, 83, 112);
+            margin: 20px;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #0a0a0a;
+        }
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        label {
+            font-weight: bold;
+        }
+        .textfield, .checkbox {
+            padding: 8px;
+
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .checkbox {
+            width: auto;
+            height: auto;
+            margin-top: -30px;
+        }
+        .button {
+            background-color: #5cb85c;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .button:hover {
+            background-color: #4cae4c;
+        }
+        #outputDiv {
+            width: 100%;
+            min-height: 100px;
+            margin-top: 40px;
+            border: 2px dashed #ccc;
+            background-color: #eedddd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #777;
+        }
+    </style>
 </head>
 <body>
-    
+
+    <h1>GIK339 - Grupp 38</h1>
+
+    <div class="form-container">
+        <!-- Input 1 -->
+        <label for="color">Färg:</label>
+        <input type="text" id="color" name="color" class="textfield">
+
+        <!-- Input 2 -->
+        <label for="content">Innehåll:</label>
+        <input type="text" id="content" name="content" class="textfield">
+
+        <!-- Input 3 -->
+        <label for="divStyle">Stil:</label>
+        <input type="checkbox" id="divStyle" name="divStyle" class="checkbox">
+
+        <!-- Button -->
+        <button id="applyButton" class="button">Använd inställningar</button>
+    </div>
+
+    <!-- Div-element -->
+    <div id="outputDiv"></div>
+
 </body>
 </html>

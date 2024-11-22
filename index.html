@@ -8,8 +8,8 @@
         body {
             font-family: Arial, sans-serif;
             background-color: rgb(83, 83, 112);
-            margin: 20px;
-            padding: 20px;
+            margin: 4rem;
+            padding:4rem;
         }
         h1 {
             text-align: center;
@@ -18,46 +18,78 @@
         .form-container {
             display: flex;
             flex-direction: column;
-            gap: 10px;
-            max-width: 400px;
+            gap: 1rem;
+            max-width: 100rem;
             margin: 0 auto;
         }
         label {
             font-weight: bold;
         }
         .textfield, .checkbox {
-            padding: 8px;
+            padding: 1rem;
+            border: 0.2rem solid #ccc;
+            border-radius: 1rem;
+        }
 
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .checkbox {
-            width: auto;
-            height: auto;
-            margin-top: -30px;
-        }
         .button {
-            background-color: #5cb85c;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
+            width: 20%;
+            border-radius: .25rem;
+            text-transform: uppercase;
+            font-style: normal;
+            font-weight: 400rem;
+            padding-left: 5rem;
+            padding-right: 5rem;
+            color: #fff;
+            -webkit-clip-path: polygon(0 0,0 0,100% 0,100% 0,100% calc(100% - 15px),calc(100% - 15px) 100%,15px 100%,0 100%);
+            clip-path: polygon(0 0,0 0,100% 0,100% 0,100% calc(100% - 15px),calc(100% - 15px) 100%,15px 100%,0 100%);
+            height: 4rem;
+            font-size: 0.8rem;
+            line-height: 3rem;
+            letter-spacing: 0.2rem;
+            transition: .2s .1s;
+            background-image: linear-gradient(90deg,#2d2c2c,#75115b);
+            border: 0 solid;
+            overflow: hidden;
         }
         .button:hover {
-            background-color: #4cae4c;
+            cursor: pointer;
+            color: rgb(189, 190, 189);
+            transform: scale(1.05);
+            transition: all .4s ease-in-out;
+            padding-right: 5rem;
+            padding-left: 5r;
         }
         #outputDiv {
-            width: 100%;
-            min-height: 100px;
-            margin-top: 40px;
-            border: 2px dashed #ccc;
+            width: auto;
+            align-content: center;
+            min-height: 4rem;
+            min-width: 10rem;
+            align-self: stretch;
+            flex-grow: 1;
+            border: 0.2rem dashed #ccc;
             background-color: #eedddd;
             display: flex;
             justify-content: center;
-            align-items: center;
-            color: #777;
+            color: #000000;
+            border-radius: 1rem;
+        }
+
+        .button-output-container {
+            display: flex;
+            gap: 1rem; /* Add spacing between button and output box */
+            align-items: center; /* Align items vertically in the center */
+            justify-content: flex-start; /* Ensure button and div align to the left */
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: center; /* Align items vertically */
+            gap: 0.5rem; /* Add spacing between the label and checkbox */
+        }
+        
+        .checkbox {
+            width: auto;
+            height: auto;
         }
     </style>
 </head>
@@ -74,16 +106,24 @@
         <label for="content">Innehåll:</label>
         <input type="text" id="content" name="content" class="textfield">
 
-        <!-- Input 3 -->
-        <label for="divStyle">Stil:</label>
-        <input type="checkbox" id="divStyle" name="divStyle" class="checkbox">
+        <!-- Checkbox -->
+        <div class="checkbox-container">
+            <label for="divStyle">Stil:</label>
+            <input type="checkbox" id="divStyle" name="divStyle" class="checkbox">
+        </div>
 
-        <!-- Button -->
-        <button id="applyButton" class="button">Använd inställningar</button>
+        <!-- Button and Output Div -->
+        <div class="button-output-container">
+            <button id="applyButton" class="button">Ta bort</button>
+            <div id="outputDiv"></div>
+        </div>
     </div>
 
-    <!-- Div-element -->
-    <div id="outputDiv"></div>
-
 </body>
+
 </html>
+
+<script 
+    src="script.js" defer>
+</script>
+

@@ -22,7 +22,7 @@ styleCheckbox.addEventListener('change', () => {
     // Uppdatera divens innehåll och stil
     outputDiv.textContent = contentValue || 'Inget innehåll angett'; // Standardtext om fältet är tomt
     outputDiv.style.backgroundColor = colorValue || 'transparent'; // Transparent om ingen färg anges
-
+    console.log('Event triggered by:', event.target);
     // Om checkboxen är markerad, lägg till extra stil
     if (isStyled) {
         outputDiv.style.border = '2px solid black';

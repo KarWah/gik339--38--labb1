@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>gik399 - Grupp 38</title>
+    <title>gik399 - Grupp 38</title> <!-- Rubrik för sidan -->
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,11 +12,11 @@
     <h1 class="page-title">GIK339 - Grupp 38</h1>
 
     <div class="form">
-        <!-- Input 1 -->
+        <!-- Input 1: färg -->
         <label for="color" class="form__label">Färg:</label>
         <input type="text" id="color" name="color" class="textfield">
 
-        <!-- Input 2 -->
+        <!-- Input 2: innehåll -->
         <label for="content" class="form__label">Innehåll:</label>
         <input type="text" id="content" name="content" class="textfield">
 
@@ -23,11 +24,12 @@
         <div class="form__checkbox-container">
             <label for="divStyle" class="form__label">Stil:</label>
             <input type="checkbox" id="divStyle" name="divStyle" class="checkbox">
+             <!-- Knappar för att ändra färg och innehåll -->
             <button id="colorButton" class="form__button">Färg</button>
             <button id="contentButton" class="form__button">Innehåll</button>
         </div>
 
-        <!-- Button and Output Div -->
+           <!-- Button för att ta bort output och visa resultat -->
         <div class="form__button-output">
             <button id="removeButton" class="form__button">Ta bort</button>
             <div id="outputDiv" class="form__output"></div>
@@ -36,7 +38,7 @@
 
 </body>
 </html>
-
+<!-- Länkar till extern JavaScript-fil -->
 <script 
     src="script.js" defer>
 </script>

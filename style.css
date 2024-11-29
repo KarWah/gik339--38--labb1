@@ -62,22 +62,11 @@ body {
 }
 
 /* Output div styling */
-.form__output {
-    width: auto;
-    min-height: 4rem;
-    min-width: 10rem;
-    border: 0.2rem dashed #ccc;
-    background-color: #eedddd;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #000;
-    border-radius: 1rem;
-}
 
 #outputDiv {
     width: auto;
     align-content: center;
+    align-items: center;
     min-height: 4rem;
     min-width: 10rem;
     align-self: stretch;

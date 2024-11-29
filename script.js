@@ -1,65 +1,57 @@
 // Hämta element via deras id
-const colorInput = document.getElementById('color');
+const colorInput = document.querySelector('#color');
 const contentInput = document.getElementById('content');
 const styleCheckbox = document.getElementById('divStyle');
-const removeButton = document.getElementById('removeButton');
+const removeButton = document.querySelector('#removeButton');
 const outputDiv = document.getElementById('outputDiv');
+const contentButton = document.querySelector('#contentButton');
+const colorButton = document.querySelector('#colorButton');
 
-
-
-
-// Lägg till en anonym funktion som eventlyssnare för knappen
-
-
-
-
-contentButton.addEventListener('click', (e) => {
+// Fördefinierad funktion för att ändra innehållet
+function changeContent(e) {
     const contentValue = contentInput.value.trim();
-    console.log('Event triggered by:', e.target);
-    console.log(`Elementets ID: "${outputDiv.id}", Innehåll: "${outputDiv.textContent}"`);
+    console.log('Event triggered by:', e.target); // Använd event-objektet
     outputDiv.textContent = contentValue || 'Inget innehåll angett'; // Standardtext om fältet är tomt
     console.log(`Innehåll som används: "${contentValue}"`);
-});
-colorButton.addEventListener('click', (e) => {
+}
+
+// Fördefinierad funktion för att ändra färg
+function changeColor(e) {
     const colorValue = colorInput.value.trim();
-    console.log('Event triggered by:', e.target);
-    console.log(`Elementets ID: "${outputDiv.id}"`);
+    console.log('Event triggered by:', e.target); // Använd event-objektet
     outputDiv.style.backgroundColor = colorValue || 'transparent'; // Transparent om ingen färg anges
-    console.log(`Färg som används: "${colorValue}"`);
-    
-});
-removeButton.addEventListener('click', (e) => {
+    console.log(`Färg som används: "${colorValue || 'transparent'}"`);
+}
+
+// Fördefinierad funktion för att ta bort outputDiv
+function removeOutputDiv(e) {
     const chosenColor = colorInput.value.trim();
-    console.log('Event triggered by:', e.target);
-    console.log(`Elementets ID: "${outputDiv.id}", Innehåll: "${outputDiv.textContent}" Färg: "${chosenColor}"`);
+    console.log('Event triggered by:', e.target); // Använd event-objektet
+    console.log(`Elementets ID: "${outputDiv.id}", Innehåll: "${outputDiv.textContent}", Färg: "${chosenColor}"`);
     outputDiv.remove();
     console.log(`[${new Date().toLocaleTimeString()}] Elementet "${outputDiv.id}" har tagits bort.`);
-    
-});
+}
 
-
-
-// Lägg till en anonym funktion som eventlyssnare på checkboxen
-styleCheckbox.addEventListener('change', (e) => {
-    // Hämta värden från input-fälten
-
+// Fördefinierad funktion för att ändra stil via checkbox
+function toggleStyle(e) {
     const isStyled = styleCheckbox.checked;
-    console.log('Event triggered by:', e.target);
-    // Om checkboxen är markerad, lägg till extra stil
+    console.log('Event triggered by:', e.target); // Använd event-objektet
+
     if (isStyled) {
         outputDiv.style.border = '2px solid black';
         outputDiv.style.padding = '10px';
         outputDiv.style.fontWeight = 'bold';
         console.log(`Stilen på text i "${outputDiv.id}" med innehåll "${outputDiv.textContent}" är nu i fet stil.`);
     } else {
-        // Återställ stilen om checkboxen inte är markerad
         outputDiv.style.border = 'none';
         outputDiv.style.padding = '0';
         outputDiv.style.fontWeight = 'normal';
         console.log(`Stilen på text i "${outputDiv.id}" med innehåll "${outputDiv.textContent}" är nu i normal stil.`);
     }
-    
-    
-    
-});
+}
 
+// Koppla eventlyssnare till fördefinierade funktioner
+contentButton.addEventListener('click', changeContent);
+colorButton.addEventListener('click', changeColor);
+removeButton.addEventListener('click', removeOutputDiv);
+styleCheckbox.addEventListener('change', toggleStyle);
